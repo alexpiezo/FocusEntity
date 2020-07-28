@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
   name: "FocusEntity",
-  platforms: [.iOS("13.0")],
+  platforms: [.iOS(.v12)],
   products: [
     .library(name: "FocusEntity", targets: ["FocusEntity"])
   ],

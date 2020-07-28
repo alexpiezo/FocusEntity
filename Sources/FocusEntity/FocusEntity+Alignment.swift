@@ -11,6 +11,7 @@ import RealityKit
 import ARKit
 import Combine
 
+@available(iOS 13, *)
 extension FocusEntity {
 
   // MARK: Helper Methods

@@ -10,6 +10,8 @@
 import RealityKit
 
 /// An extension of FocusEntity holding the methods for the "colored" style.
+
+@available(iOS 13, *)
 public extension FocusEntity {
 
   internal func coloredStateChanged() {

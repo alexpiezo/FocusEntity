@@ -9,6 +9,7 @@
 #if canImport(ARKit)
 import RealityKit
 
+@available(iOS 13, *)
 public struct FocusEntityComponent: Component {
   public enum Style {
     case classic(color: Material.Color)

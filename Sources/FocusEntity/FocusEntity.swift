@@ -11,8 +11,10 @@ import RealityKit
 import ARKit
 import Combine
 
+@available(iOS 13, *)
 public protocol HasFocusEntity: Entity {}
 
+@available(iOS 13, *)
 public extension HasFocusEntity {
   var focusEntity: FocusEntityComponent {
     get { self.components[FocusEntityComponent.self] ?? .classic }
@@ -39,6 +41,7 @@ public extension HasFocusEntity {
 /**
 An `Entity` which is used to provide uses with visual cues about the status of ARKit world tracking.
 */
+@available(iOS 13, *)
 open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
 
   public enum FEError: Error {

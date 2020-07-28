@@ -10,6 +10,7 @@
 import RealityKit
 
 /// An extension of FocusEntity holding the methods for the "classic" style.
+@available(iOS 13, *)
 internal extension FocusEntity {
 
 
