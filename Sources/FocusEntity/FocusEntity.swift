@@ -282,6 +282,11 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
 
   public func updateFocusEntity(event: SceneEvents.Update? = nil) {
     // Perform hit testing only when ARKit tracking is in a good state.
+    #if targetEnvironment(simulator)
+        self.state = .initializing
+        return
+    #else
+    
     guard let camera = self.arView?.session.currentFrame?.camera,
       case .normal = camera.trackingState,
       let result = self.smartRaycast()
@@ -291,6 +296,7 @@ open class FocusEntity: Entity, HasAnchoring, HasFocusEntity {
     }
 
     self.state = .tracking(raycastResult: result, camera: camera)
+    #endif
   }
 }
 #else

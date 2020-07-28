@@ -148,8 +148,13 @@ extension FocusEntity {
       origin: camPos, direction: camDir,
       allowing: .estimatedPlane, alignment: .any
     )
+    
+    #if targetEnvironment(simulator)
+    let results = [ARRaycastResult]()
+    #else
     let results = self.arView?.session.raycast(rcQuery) ?? []
-
+    #endif
+    
     // 1. Check for a result on an existing plane using geometry.
     if let existingPlaneUsingGeometryResult = results.first(
       where: { $0.target == .existingPlaneGeometry }
